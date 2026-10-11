@@ -1,0 +1,41 @@
+;/* SPDX-License-Identifier: BSD-3-Clause */
+;
+; Copyright 2026 The SOF Authors
+;
+; Sound Open Firmware (SOF) USB Audio Offload Extension INF
+;
+
+[Version]
+Signature   = "$WINDOWS NT$"
+Class       = Extension
+ClassGuid   = {e2f84ce7-8efa-411c-aa69-97454ca4cb57}
+Provider    = %ProviderName%
+ExtensionId = {E37C4F25-8086-444F-B0DA-504655534241}
+CatalogFile = sof_usb_ext.cat
+DriverVer   = 09/23/2026,1.0.0.106
+PnpLockdown = 1
+
+[Manufacturer]
+%ManufacturerName% = DeviceExtensions, NT$ARCH$.10.0...18362
+
+[DeviceExtensions.NT$ARCH$.10.0...18362]
+%UsbExtDesc% = SofUsbExtInstall, USB\VID_0BDA&PID_4F25&MI_00
+%UsbExtDesc% = SofUsbExtInstall, USB\VID_0BDA&PID_4F25
+%UsbExtDesc% = SofUsbExtInstall, USB\VID_08BB&PID_2902&MI_00
+%UsbExtDesc% = SofUsbExtInstall, USB\VID_08BB&PID_2902
+
+[SofUsbExtInstall.NT]
+
+[SofUsbExtInstall.NT.HW]
+AddReg = SofUsbExt_HW_AddReg
+
+[SofUsbExt_HW_AddReg]
+; Enable Sideband Audio Bypass and route streams through Intel DSP
+HKR,,EnableSidebandBypass,0x00010001,1
+HKR,,SidebandAudioGuid,0x00000000,"{02BAA4B5-33B5-4D97-AE4F-E86DDE17536F}"
+HKR,,PreferredAudioPath,0x00010001,1
+
+[Strings]
+ProviderName = "Sound Open Firmware Project"
+ManufacturerName = "Sound Open Firmware"
+UsbExtDesc = "Intel Sound Open Firmware USB Audio Offload Extension"

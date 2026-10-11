@@ -1,0 +1,165 @@
+;/* SPDX-License-Identifier: BSD-3-Clause */
+;
+; Copyright 2026 The SOF Authors
+;
+; Sound Open Firmware (SOF) Windows Driver Package
+;
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=MEDIA
+ClassGuid={4d36e96c-e325-11ce-bfc1-08002be10318}
+Provider=%ProviderName%
+CatalogFile=sof_dsp.cat
+DriverVer=09/23/2026,1.0.0.106
+PnpLockdown=1
+
+[DestinationDirs]
+DefaultDestDir = 13
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+sof_dsp.sys = 1,,
+
+; ================= Manufacturer & Models =================
+
+[Manufacturer]
+%MfgName% = Intel,NT$ARCH$.10.0...16299
+
+[Intel.NT$ARCH$.10.0...16299]
+; Intel Panther Lake, Wildcat Lake & Nova Lake (ACE 3.0)
+%Intel.DeviceDesc% = Sof_Device, PCI\VEN_8086&DEV_E428
+%Intel.DeviceDesc% = Sof_Device, PCI\VEN_8086&DEV_4F80
+%Intel.DeviceDesc% = Sof_Device, PCI\VEN_8086&DEV_E328
+%Intel.DeviceDesc% = Sof_Device, PCI\VEN_8086&DEV_4D28
+%Intel.DeviceDesc% = Sof_Device, PCI\VEN_8086&DEV_D328
+%Intel.DeviceDesc% = Sof_Device, PCI\VEN_8086&DEV_6E50
+
+; Intel Lunar Lake (ACE 2.0)
+%Intel.DeviceDesc% = Sof_Device, PCI\VEN_8086&DEV_A828
+
+; Intel Meteor Lake & Arrow Lake (ACE 1.5)
+%Intel.DeviceDesc% = Sof_Device, PCI\VEN_8086&DEV_7E28
+%Intel.DeviceDesc% = Sof_Device, PCI\VEN_8086&DEV_7728
+%Intel.DeviceDesc% = Sof_Device, PCI\VEN_8086&DEV_7F50
+%Intel.DeviceDesc% = Sof_Device, PCI\VEN_8086&DEV_7E50
+
+; Intel Raptor Lake / Alder Lake / Rocket Lake (cAVS 2.5)
+%Intel.DeviceDesc% = Sof_Device, PCI\VEN_8086&DEV_7AD0
+%Intel.DeviceDesc% = Sof_Device, PCI\VEN_8086&DEV_51C8
+%Intel.DeviceDesc% = Sof_Device, PCI\VEN_8086&DEV_51C9
+%Intel.DeviceDesc% = Sof_Device, PCI\VEN_8086&DEV_51CA
+%Intel.DeviceDesc% = Sof_Device, PCI\VEN_8086&DEV_51CB
+%Intel.DeviceDesc% = Sof_Device, PCI\VEN_8086&DEV_51CC
+%Intel.DeviceDesc% = Sof_Device, PCI\VEN_8086&DEV_51CD
+%Intel.DeviceDesc% = Sof_Device, PCI\VEN_8086&DEV_51CE
+%Intel.DeviceDesc% = Sof_Device, PCI\VEN_8086&DEV_51CF
+%Intel.DeviceDesc% = Sof_Device, PCI\VEN_8086&DEV_54C8
+%Intel.DeviceDesc% = Sof_Device, PCI\VEN_8086&DEV_7A50
+%Intel.DeviceDesc% = Sof_Device, PCI\VEN_8086&DEV_F1C8
+
+; Intel Tiger Lake (cAVS 2.5)
+%Intel.DeviceDesc% = Sof_Device, PCI\VEN_8086&DEV_43C8
+%Intel.DeviceDesc% = Sof_Device, PCI\VEN_8086&DEV_A0C8
+
+; Intel Ice Lake, Jasper Lake & Elkhart Lake (cAVS 2.0)
+%Intel.DeviceDesc% = Sof_Device, PCI\VEN_8086&DEV_34C8
+%Intel.DeviceDesc% = Sof_Device, PCI\VEN_8086&DEV_3DC8
+%Intel.DeviceDesc% = Sof_Device, PCI\VEN_8086&DEV_38C8
+%Intel.DeviceDesc% = Sof_Device, PCI\VEN_8086&DEV_4B55
+%Intel.DeviceDesc% = Sof_Device, PCI\VEN_8086&DEV_4B58
+%Intel.DeviceDesc% = Sof_Device, PCI\VEN_8086&DEV_4DC8
+
+; Intel Cannon Lake, Comet Lake & Coffee Lake (cAVS 1.8)
+%Intel.DeviceDesc% = Sof_Device, PCI\VEN_8086&DEV_9DC8
+%Intel.DeviceDesc% = Sof_Device, PCI\VEN_8086&DEV_A348
+%Intel.DeviceDesc% = Sof_Device, PCI\VEN_8086&DEV_02C8
+%Intel.DeviceDesc% = Sof_Device, PCI\VEN_8086&DEV_06C8
+%Intel.DeviceDesc% = Sof_Device, PCI\VEN_8086&DEV_A3F0
+%Intel.DeviceDesc% = Sof_Device, PCI\VEN_8086&DEV_F0C8
+
+; Intel Apollo Lake, Gemini Lake, Skylake & Kaby Lake (cAVS 1.5)
+%Intel.DeviceDesc% = Sof_Device, PCI\VEN_8086&DEV_5A98
+%Intel.DeviceDesc% = Sof_Device, PCI\VEN_8086&DEV_3198
+%Intel.DeviceDesc% = Sof_Device, PCI\VEN_8086&DEV_9D70
+%Intel.DeviceDesc% = Sof_Device, PCI\VEN_8086&DEV_A170
+%Intel.DeviceDesc% = Sof_Device, PCI\VEN_8086&DEV_9D71
+%Intel.DeviceDesc% = Sof_Device, PCI\VEN_8086&DEV_A171
+%Intel.DeviceDesc% = Sof_Device, PCI\VEN_8086&DEV_A2F0
+
+; AMD ACP (Strix Point, Phoenix, Rembrandt, VanGogh, Renoir)
+%Amd.DeviceDesc% = Sof_Device, PCI\VEN_1022&DEV_1502
+%Amd.DeviceDesc% = Sof_Device, PCI\VEN_1022&DEV_15E4
+%Amd.DeviceDesc% = Sof_Device, PCI\VEN_1022&DEV_15E3
+%Amd.DeviceDesc% = Sof_Device, PCI\VEN_1022&DEV_1640
+%Amd.DeviceDesc% = Sof_Device, PCI\VEN_1022&DEV_15E2
+
+; ================= Install Sections =================
+
+[Sof_Device.NT]
+CopyFiles = Drivers_Dir
+
+[Drivers_Dir]
+sof_dsp.sys
+
+[Sof_Device.NT.Interfaces]
+AddInterface=%KSCATEGORY_AUDIO%,%KSNAME_Wave%,Sof_Wave_Interface
+AddInterface=%KSCATEGORY_RENDER%,%KSNAME_Wave%,Sof_Wave_Interface
+AddInterface=%KSCATEGORY_CAPTURE%,%KSNAME_Wave%,Sof_Wave_Interface
+AddInterface=%KSCATEGORY_REALTIME%,%KSNAME_Wave%,Sof_Wave_Interface
+
+[Sof_Wave_Interface]
+AddReg=Sof_Wave_Interface.AddReg
+
+[Sof_Wave_Interface.AddReg]
+HKR,,FriendlyName,,%Sof_Wave_Name%
+HKR,,CLSID,,%Proxy.CLSID%
+
+[Sof_Device.NT.Services]
+AddService = sof_dsp,%SPSVCINST_ASSOCSERVICE%,Sof_Service_Inst
+
+[Sof_Service_Inst]
+DisplayName    = %Sof.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %13%\sof_dsp.sys
+AddReg         = Sof_Service_Inst.AddReg
+
+[Sof_Service_Inst.AddReg]
+HKR,Parameters,SafeBootPolicy,0x00010001,2
+HKR,Parameters,BootSafetyToken,0x00010001,0
+HKR,Parameters,ArmedTesting,0x00010001,1
+HKR,Parameters,EnablePortCls,0x00010001,1
+HKR,Parameters,EnableS0Idle,0x00010001,1
+HKR,Parameters,S0IdleTimeoutMs,0x00010001,5000
+HKR,Parameters,SimulateJackState,0x00010001,4
+HKR,Parameters,EnableUsbOffload,0x00010001,1
+
+; ================= KMDF WDF Section =================
+
+[Sof_Device.NT.Wdf]
+KmdfService = sof_dsp, Sof_wdfsect
+
+[Sof_wdfsect]
+KmdfLibraryVersion = 1.35
+
+; ================= Strings =================
+
+[Strings]
+SPSVCINST_ASSOCSERVICE = 0x00000002
+ProviderName = "Sound Open Firmware Project"
+MfgName = "Sound Open Firmware"
+DiskName = "SOF Driver Installation Disk"
+Sof.SVCDESC = "Sound Open Firmware DSP Service"
+Intel.DeviceDesc = "Intel Sound Open Firmware Audio DSP"
+Amd.DeviceDesc = "AMD Sound Open Firmware Audio DSP"
+Sof_Wave_Name = "Sound Open Firmware Wave Audio"
+KSNAME_Wave = "Wave"
+Proxy.CLSID = "{17CCA71B-ECD7-11D0-B908-00A0C9223196}"
+KSCATEGORY_AUDIO = "{6994AD04-93EF-11D0-A3CC-00A0C9223196}"
+KSCATEGORY_RENDER = "{65E8773E-8F56-11D0-A3B9-00A0C9223196}"
+KSCATEGORY_CAPTURE = "{65E8773D-8F56-11D0-A3B9-00A0C9223196}"
+KSCATEGORY_REALTIME = "{EB115FFC-10C8-4964-831D-6DCB02E6F23F}"

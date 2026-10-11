@@ -1,0 +1,40 @@
+;/* SPDX-License-Identifier: BSD-3-Clause */
+;
+; Copyright 2026 The SOF Authors
+;
+; Sound Open Firmware (SOF) SoundWire SDCA Audio Function Lower Filter Extension
+;
+
+[Version]
+Signature   = "$WINDOWS NT$"
+Class       = Extension
+ClassGuid   = {e2f84ce7-8efa-411c-aa69-97454ca4cb57}
+Provider    = %ProviderName%
+ExtensionId = {B879C8D5-45D6-444F-8086-504653444341}
+CatalogFile = sof_sdca_ext.cat
+DriverVer   = 09/23/2026,1.0.0.105
+PnpLockdown = 1
+
+[Manufacturer]
+%ManufacturerName% = DeviceExtensions, NT$ARCH$.10.0...18362
+
+[DeviceExtensions.NT$ARCH$.10.0...18362]
+%FilterDesc% = SofFilterInstall, SOUNDWIRE\SDCA_FUNCTION_10&MAN_0100&FUNC_0000&TYPE_08&VER_00&ADR_01&LID_00&UID_01&SUBSYS_00000000
+%FilterDesc% = SofFilterInstall, SOUNDWIRE\SDCA_FUNCTION_10&MAN_0100&FUNC_0000&TYPE_08&VER_00&ADR_01&SUBSYS_00000000
+%FilterDesc% = SofFilterInstall, SOUNDWIRE\SDCA_FUNCTION_10&MAN_0100&FUNC_0000&TYPE_08&VER_00&ADR_01
+%FilterDesc% = SofFilterInstall, SDCA_10\AUDIOFUNCTION
+
+[SofFilterInstall.NT]
+
+[SofFilterInstall.NT.Filters]
+AddFilter = sof_dsp,, SofFilter_Section
+
+[SofFilter_Section]
+FilterPosition = Lower
+
+
+[Strings]
+ProviderName = "Sound Open Firmware Project"
+ManufacturerName = "Sound Open Firmware"
+FilterDesc = "Intel Sound Open Firmware SDCA Audio Function Lower Filter Extension"
+Sof.SVCDESC = "Sound Open Firmware DSP Service"
