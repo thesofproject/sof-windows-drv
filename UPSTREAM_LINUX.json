@@ -1,0 +1,372 @@
+{
+  "version": "1.0.0",
+  "upstream": {
+    "repository_url": "https://github.com/thesofproject/linux.git",
+    "web_url": "https://github.com/thesofproject/linux",
+    "raw_base_url": "https://raw.githubusercontent.com/thesofproject/linux",
+    "api_base_url": "https://api.github.com/repos/thesofproject/linux",
+    "default_branch": "topic/sof-dev",
+    "local_mirror_path": "//192.168.122.1/work/linux",
+    "tracked_commit": "b4bc873561db55f8ed1bb4113797d768424f300d",
+    "tracked_commit_date": "2026-09-11T09:49:21Z",
+    "tracked_commit_author": "Peter Ujfalusi <peter.ujfalusi@linux.intel.com>",
+    "tracked_commit_subject": "ASoC: SOF: ipc4-topology: Fix shift-out-of-bounds for aggregated ALH capture",
+    "last_sync": "2026-09-23T22:17:00Z"
+  },
+  "excluded_osal_files": [
+    "include/sof/sof_osal.h",
+    "src/core/sof_core_init.c",
+    "include/compat/linux/bitfield.h",
+    "include/compat/linux/bits.h",
+    "include/compat/linux/compiler.h",
+    "include/compat/linux/completion.h",
+    "include/compat/linux/device.h",
+    "include/compat/linux/errno.h",
+    "include/compat/linux/io.h",
+    "include/compat/linux/kernel.h",
+    "include/compat/linux/types.h",
+    "include/compat/linux/uuid.h",
+    "include/compat/sound/**",
+    "include/compat/uapi/**"
+  ],
+  "mappings": [
+    {
+      "linux": "sound/soc/sof/fw-file-profile.c",
+      "windows": "src/core/fw-file-profile.c",
+      "category": "core_c",
+      "desc": "Firmware & topology path resolution & profile loader"
+    },
+    {
+      "linux": "sound/soc/sof/ipc4-control.c",
+      "windows": "src/core/ipc4-control.c",
+      "category": "core_c",
+      "desc": "IPC4 mixer, volume, mute & bytes kcontrols"
+    },
+    {
+      "linux": "sound/soc/sof/ipc4-fw-reg.h",
+      "windows": "src/core/ipc4-fw-reg.h",
+      "category": "core_header",
+      "desc": "IPC4 firmware registers & status definitions"
+    },
+    {
+      "linux": "sound/soc/sof/ipc4-loader.c",
+      "windows": "src/core/ipc4-loader.c",
+      "category": "core_c",
+      "desc": "IPC4 module library & base firmware loader"
+    },
+    {
+      "linux": "sound/soc/sof/ipc4-priv.h",
+      "windows": "src/core/ipc4-priv.h",
+      "category": "core_header",
+      "desc": "IPC4 internal structures, state & pipelines"
+    },
+    {
+      "linux": "sound/soc/sof/ipc4-topology.c",
+      "windows": "src/core/ipc4-topology.c",
+      "category": "core_c",
+      "desc": "IPC4 DAPM widget & pipeline topology binder"
+    },
+    {
+      "linux": "sound/soc/sof/ipc4-topology.h",
+      "windows": "src/core/ipc4-topology.h",
+      "category": "core_header",
+      "desc": "IPC4 topology manifest & copier structures"
+    },
+    {
+      "linux": "sound/soc/sof/ipc4.c",
+      "windows": "src/core/ipc4.c",
+      "category": "core_c",
+      "desc": "IPC4 protocol handler, message send & doorbell engine"
+    },
+    {
+      "linux": "sound/soc/sof/loader.c",
+      "windows": "src/core/loader.c",
+      "category": "core_c",
+      "desc": "Generic firmware parsing and manifest validation"
+    },
+    {
+      "linux": "sound/soc/sof/ops.h",
+      "windows": "src/core/ops.h",
+      "category": "core_header",
+      "desc": "SOF DSP operations abstraction vtable"
+    },
+    {
+      "linux": "sound/soc/sof/sof-audio.h",
+      "windows": "src/core/sof-audio.h",
+      "category": "core_header",
+      "desc": "SOF audio widget, route & stream structures"
+    },
+    {
+      "linux": "sound/soc/sof/sof-priv.h",
+      "windows": "src/core/sof-priv.h",
+      "category": "core_header",
+      "desc": "SOF device context & core driver private data"
+    },
+    {
+      "linux": "sound/soc/sof/intel/hda-dsp.c",
+      "windows": "src/core/intel/hda-dsp.c",
+      "category": "core_intel_c",
+      "desc": "Intel HDA DSP core power, registers & ROM status"
+    },
+    {
+      "linux": "sound/soc/sof/intel/mtl.c",
+      "windows": "src/core/intel/mtl.c",
+      "category": "core_intel_c",
+      "desc": "Intel Meteor Lake (ACE 1.0) architecture ops"
+    },
+    {
+      "linux": "sound/soc/sof/intel/ptl.c",
+      "windows": "src/core/intel/ptl.c",
+      "category": "core_intel_c",
+      "desc": "Intel Panther Lake (ACE 3.0) architecture ops"
+    },
+    {
+      "linux": "sound/soc/sof/intel/tgl.c",
+      "windows": "src/core/intel/tgl.c",
+      "category": "core_intel_c",
+      "desc": "Intel Tiger Lake (cAVS 2.5) architecture ops"
+    },
+    {
+      "linux": "sound/soc/sof/intel/atom.h",
+      "windows": "include/intel/atom.h",
+      "category": "intel_header",
+      "desc": "Intel Atom cAVS definitions"
+    },
+    {
+      "linux": "sound/soc/sof/intel/ext_manifest.h",
+      "windows": "include/intel/ext_manifest.h",
+      "category": "intel_header",
+      "desc": "Intel extended manifest structures"
+    },
+    {
+      "linux": "sound/soc/sof/intel/hda-ipc.h",
+      "windows": "include/intel/hda-ipc.h",
+      "category": "intel_header",
+      "desc": "Intel HDA IPC mailbox offsets & registers"
+    },
+    {
+      "linux": "sound/soc/sof/intel/hda.h",
+      "windows": "include/intel/hda.h",
+      "category": "intel_header",
+      "desc": "Intel HDA DSP master hardware definitions"
+    },
+    {
+      "linux": "sound/soc/sof/intel/lnl.h",
+      "windows": "include/intel/lnl.h",
+      "category": "intel_header",
+      "desc": "Intel Lunar Lake (ACE 2.0) registers & ops"
+    },
+    {
+      "linux": "sound/soc/sof/intel/mtl.h",
+      "windows": "include/intel/mtl.h",
+      "category": "intel_header",
+      "desc": "Intel Meteor Lake (ACE 1.0) registers & ops"
+    },
+    {
+      "linux": "sound/soc/sof/intel/nvl.h",
+      "windows": "include/intel/nvl.h",
+      "category": "intel_header",
+      "desc": "Intel Nova Lake architecture definitions"
+    },
+    {
+      "linux": "sound/soc/sof/intel/ptl.h",
+      "windows": "include/intel/ptl.h",
+      "category": "intel_header",
+      "desc": "Intel Panther Lake (ACE 3.0) registers & ops"
+    },
+    {
+      "linux": "sound/soc/sof/intel/shim.h",
+      "windows": "include/intel/shim.h",
+      "category": "intel_header",
+      "desc": "Intel DSP SHIM and memory window registers"
+    },
+    {
+      "linux": "sound/soc/sof/intel/telemetry.h",
+      "windows": "include/intel/telemetry.h",
+      "category": "intel_header",
+      "desc": "Intel DSP telemetry structures & layouts"
+    },
+    {
+      "linux": "include/sound/sof/channel_map.h",
+      "windows": "include/sof/channel_map.h",
+      "category": "sof_header",
+      "desc": "SOF audio channel mapping definitions"
+    },
+    {
+      "linux": "include/sound/sof/control.h",
+      "windows": "include/sof/control.h",
+      "category": "sof_header",
+      "desc": "SOF volume and mixer control commands"
+    },
+    {
+      "linux": "include/sound/sof/dai-amd.h",
+      "windows": "include/sof/dai-amd.h",
+      "category": "sof_header",
+      "desc": "AMD DAI configuration parameters"
+    },
+    {
+      "linux": "include/sound/sof/dai-imx.h",
+      "windows": "include/sof/dai-imx.h",
+      "category": "sof_header",
+      "desc": "NXP i.MX DAI configuration parameters"
+    },
+    {
+      "linux": "include/sound/sof/dai-intel.h",
+      "windows": "include/sof/dai-intel.h",
+      "category": "sof_header",
+      "desc": "Intel DAI (HDA, SSP, ALH) configuration"
+    },
+    {
+      "linux": "include/sound/sof/dai-mediatek.h",
+      "windows": "include/sof/dai-mediatek.h",
+      "category": "sof_header",
+      "desc": "MediaTek DAI configuration parameters"
+    },
+    {
+      "linux": "include/sound/sof/dai.h",
+      "windows": "include/sof/dai.h",
+      "category": "sof_header",
+      "desc": "SOF generic DAI interfaces"
+    },
+    {
+      "linux": "include/sound/sof/debug.h",
+      "windows": "include/sof/debug.h",
+      "category": "sof_header",
+      "desc": "SOF debug, trace & telemetry formats"
+    },
+    {
+      "linux": "include/sound/sof/ext_manifest.h",
+      "windows": "include/sof/ext_manifest.h",
+      "category": "sof_header",
+      "desc": "SOF extended manifest v1-v3 headers"
+    },
+    {
+      "linux": "include/sound/sof/ext_manifest4.h",
+      "windows": "include/sof/ext_manifest4.h",
+      "category": "sof_header",
+      "desc": "SOF extended manifest v4 (IPC4) headers"
+    },
+    {
+      "linux": "include/sound/sof/header.h",
+      "windows": "include/sof/header.h",
+      "category": "sof_header",
+      "desc": "SOF generic IPC message headers & command IDs"
+    },
+    {
+      "linux": "include/sound/sof/info.h",
+      "windows": "include/sof/info.h",
+      "category": "sof_header",
+      "desc": "SOF DSP firmware info & build tokens"
+    },
+    {
+      "linux": "include/sound/sof/pm.h",
+      "windows": "include/sof/pm.h",
+      "category": "sof_header",
+      "desc": "SOF power management commands & states"
+    },
+    {
+      "linux": "include/sound/sof/stream.h",
+      "windows": "include/sof/stream.h",
+      "category": "sof_header",
+      "desc": "SOF PCM audio stream commands & parameters"
+    },
+    {
+      "linux": "include/sound/sof/topology.h",
+      "windows": "include/sof/topology.h",
+      "category": "sof_header",
+      "desc": "SOF topology binary tokens and parsing structs"
+    },
+    {
+      "linux": "include/sound/sof/trace.h",
+      "windows": "include/sof/trace.h",
+      "category": "sof_header",
+      "desc": "SOF DMA trace buffer structures"
+    },
+    {
+      "linux": "include/sound/sof/xtensa.h",
+      "windows": "include/sof/xtensa.h",
+      "category": "sof_header",
+      "desc": "Xtensa DSP architecture registers & dumps"
+    },
+    {
+      "linux": "include/sound/sof/ipc4/header.h",
+      "windows": "include/sof/ipc4/header.h",
+      "category": "sof_ipc4_header",
+      "desc": "IPC4 message headers, pipeline IDs & modules"
+    },
+    {
+      "linux": "include/uapi/sound/sof/abi.h",
+      "windows": "include/sof/uapi/abi.h",
+      "category": "uapi_header",
+      "desc": "SOF ABI version and backward compatibility macros"
+    },
+    {
+      "linux": "include/uapi/sound/sof/fw.h",
+      "windows": "include/sof/uapi/fw.h",
+      "category": "uapi_header",
+      "desc": "SOF firmware binary header layouts"
+    },
+    {
+      "linux": "include/uapi/sound/sof/header.h",
+      "windows": "include/sof/uapi/header.h",
+      "category": "uapi_header",
+      "desc": "SOF UAPI command header definitions"
+    },
+    {
+      "linux": "include/uapi/sound/sof/tokens.h",
+      "windows": "include/sof/uapi/tokens.h",
+      "category": "uapi_header",
+      "desc": "SOF topology token IDs"
+    }
+  ],
+  "file_hashes": {
+    "src/core/fw-file-profile.c": "e93deed94b5123adfdb3d2a150dcb79c9505cd153ee8e2fe1cdccbebaefa9010",
+    "src/core/ipc4-control.c": "a6931f868ed45ed071c061148bdc100be7a204e72c6898950b43ad49ab86677a",
+    "src/core/ipc4-fw-reg.h": "7caef8591a05188528fee0bd7d13c2df7dc269c0ed66e294a10232d8290700df",
+    "src/core/ipc4-loader.c": "4c2678f2bccb9a79486e292dcbc313cd09824c583340b5ce3e466b65e4496747",
+    "src/core/ipc4-priv.h": "b9fbaae2f185e5e62d584e1462fa16ae2460a3ab0c8a5baf98a4f5593a8d1892",
+    "src/core/ipc4-topology.c": "76afc583310e5be32140be12e4589a5360cdad7fb0c9bf842e58388728f574f7",
+    "src/core/ipc4-topology.h": "1b00ffda56398030c0af46372abe30ee90247fa58e393ce971eefca1ba254ecd",
+    "src/core/ipc4.c": "f7cc964edb264c614655088b572ca93c64cb79f57c7f41bed6ab122d2e154a3c",
+    "src/core/loader.c": "29f1d781cd2946aae2cb799123752be9c135bb20b266ea6d23b1945622ee08db",
+    "src/core/ops.h": "89b941d5077acb1e2ee6bf0871cab221ca4efd4bf561f13951fbf69cd270c1aa",
+    "src/core/sof-audio.h": "b97c4dded9225a72620285d742241c1a6311d25e42664e740efa76d29d471c56",
+    "src/core/sof-priv.h": "63097f30e05096adb202eabbbb804ecef835f59fe8240a1119e0321b341af3bd",
+    "src/core/intel/hda-dsp.c": "1303dddbb8a6e85600333551009ebc960cbfd458afc9f3349c223080367bdddc",
+    "src/core/intel/mtl.c": "8ffae087b0e1eea24d14373638dcfbd7c057f5d79d4b009f48f0bfca416623a3",
+    "src/core/intel/ptl.c": "b1940098215cc0b50ada26cc9b04a8c99cf7ab269a22a71fc1ec699f153a9820",
+    "src/core/intel/tgl.c": "bc04d383f0e3d2b1b9f4b62d1378cfec3dffa06d8e9cd22af5033387f943831f",
+    "include/intel/atom.h": "472c85ba49934b6b465380cc2d045e2ee74b2b27ba444c4cb9674f97ed0ffd99",
+    "include/intel/ext_manifest.h": "d25e608202328f35c3d45308efbf5af2ba3bb7910a33141f8292db8ba180aff9",
+    "include/intel/hda-ipc.h": "080d584795a9a1dfb0c45d03b6ce86dc83e3bd4b53013996f222771482a59ef8",
+    "include/intel/hda.h": "52cbd7f20387340809b29832c4d4e9c1113db492d904e2e276a06bb7bebc1f17",
+    "include/intel/lnl.h": "9d3122fb29687427defe6e5fa9d83e3c51f065a7477fb4948c42c4899cbaf987",
+    "include/intel/mtl.h": "5d99b2f2242999dfc4c8302299f6765d1c755cf73795e0b9e0f6a00f263d37c3",
+    "include/intel/nvl.h": "f4c9894d1a9be998a2edd83bf484e1b1fc5f48df2b88976e93b243b1fc194b97",
+    "include/intel/ptl.h": "c8ccc61edb26942a1700b1affe046fd319f8073d1a5c58aece414c55462cc75f",
+    "include/intel/shim.h": "66a521a4d76aaa9254bdebe37430a4907b8ce9cd499cf22c4ff0a0a15fe4452b",
+    "include/intel/telemetry.h": "934e2bfdc5f94143aaaa1692f61a5e7e084bdd2789aa488cc4dd9f8c12f5fffd",
+    "include/sof/channel_map.h": "e3cd8a37bb0c3184e9f7522c043842a5156d0eaa2c9260ca909b2c2249abe93c",
+    "include/sof/control.h": "f10f4f03ece116100c0a84773e549477b789591eab332dbae2781d4b29ba3bbf",
+    "include/sof/dai-amd.h": "e5a107830ee1257db171173435d929064f8805c799d3d3608b806f27fef6f25c",
+    "include/sof/dai-imx.h": "62f779b62636de203053a2d6d8dd31e5cbcdfc57983a5c2d5a1dbe050d563709",
+    "include/sof/dai-intel.h": "2c21fe0c187de6f689c4562af752839eba6638a6a5a0e9d8afab1a556bf1d596",
+    "include/sof/dai-mediatek.h": "5976d57b53eacfc892833370633d2b59aebf1390f017ef725445164fee0fbaf3",
+    "include/sof/dai.h": "12e8daf4dcb924c736bdc10890a292377fefad9f9210582934c79d760ee994b6",
+    "include/sof/debug.h": "8705f6004fb0b114d5164fc72a66d249fc21cf1383946dd80896d7f72fa8afc5",
+    "include/sof/ext_manifest.h": "ede8d665d24c2333e0b5d92b642180234a3393520df5f6a060f7427cd8f41388",
+    "include/sof/ext_manifest4.h": "61f6265cf914996f4d696674f4386713c3a68eed42060692c5378ed316756b9f",
+    "include/sof/header.h": "7acd974728c59135a39f00a8168b10d4afd67297fd47d4d5b66fd4e3d8a5a868",
+    "include/sof/info.h": "c287cda0e9767729fd086f875d0249bd127705520bbb2e1a98de5488f3b5bc58",
+    "include/sof/pm.h": "1302e05a058882b330e97768b0ac50453ca10813258f17a95e50102667698ae9",
+    "include/sof/stream.h": "3590dd1faa1e3bf12e72909ef86e0331bf98dde17a930bfa05e34a4e220632dc",
+    "include/sof/topology.h": "8be8e4a289e3565867df4b94d30822f18702a8ea334c84e3f7c397f2447ff221",
+    "include/sof/trace.h": "8ad74a9446ec9159a8f06dd26738a682890a89ab0fe98fed6974ea60462da68c",
+    "include/sof/xtensa.h": "4be992fd0c7e0a60c61257a75ca690492dab4a9fca29c6c9189fde3ec0d502ad",
+    "include/sof/ipc4/header.h": "ceae7d7e629d88c51acfe066a92523edd8151699271655e5ff096d4e47fe017e",
+    "include/sof/uapi/abi.h": "2e90aa4871782ac32b3000b2589a67bb8abb3b2ac7b4e953492807c793df1554",
+    "include/sof/uapi/fw.h": "fb2a2c9c1bb911c7f996cf363f96e7726448d57e5101568e4c4f27092a6ddc5e",
+    "include/sof/uapi/header.h": "95aa55529974fc52cc05bfacd509c79a7916157a5be8187b6ea1a1525acf2c38",
+    "include/sof/uapi/tokens.h": "e552e9fde16d3a6952b259fa43f56474c3a4ac43da967cce9e09fdf9c68b1e69"
+  }
+}
