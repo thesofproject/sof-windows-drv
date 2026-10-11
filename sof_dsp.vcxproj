@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{A3896AF6-CF85-4528-B37F-E2504F44C762}</ProjectGuid>
+    <RootNamespace>sof_dsp</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)obj\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+    <TargetExt>.sys</TargetExt>
+    <GenerateManifest>false</GenerateManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)obj\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+    <TargetExt>.sys</TargetExt>
+    <GenerateManifest>false</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>false</SDLCheck>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <PreprocessorDefinitions>_DEBUG;_KERNEL_MODE;_AMD64_;AMD64;KMDF_VERSION_MAJOR=1;KMDF_VERSION_MINOR=35;KMDF_MINIMUM_VERSION_REQUIRED=35;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>false</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)include;$(ProjectDir)include\sof;$(ProjectDir)include\compat;$(ProjectDir)src\driver;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\km;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\km\crt;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared;C:\Program Files (x86)\Windows Kits\10\Include\wdf\kmdf\1.35;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4200;4201;4214;4116;4820;4324;4117;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <AdditionalOptions>/kernel %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Native</SubSystem>
+      <Driver>Driver</Driver>
+      <EntryPointSymbol>SofDriverEntry</EntryPointSymbol>
+      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
+      <AdditionalDependencies>C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\ntoskrnl.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\hal.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\BufferOverflowK.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\portcls.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\ks.lib;C:\Program Files (x86)\Windows Kits\10\Lib\wdf\kmdf\x64\1.35\WdfLdr.lib;C:\Program Files (x86)\Windows Kits\10\Lib\wdf\kmdf\x64\1.35\WdfDriverEntry.lib;$(OutDir)sof_core.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>false</SDLCheck>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <PreprocessorDefinitions>NDEBUG;_KERNEL_MODE;_AMD64_;AMD64;KMDF_VERSION_MAJOR=1;KMDF_VERSION_MINOR=35;KMDF_MINIMUM_VERSION_REQUIRED=35;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>false</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)include;$(ProjectDir)include\sof;$(ProjectDir)include\compat;$(ProjectDir)src\driver;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\km;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\km\crt;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared;C:\Program Files (x86)\Windows Kits\10\Include\wdf\kmdf\1.35;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4200;4201;4214;4116;4820;4324;4117;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <AdditionalOptions>/kernel %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Native</SubSystem>
+      <Driver>Driver</Driver>
+      <EntryPointSymbol>SofDriverEntry</EntryPointSymbol>
+      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
+      <AdditionalDependencies>C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\ntoskrnl.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\hal.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\BufferOverflowK.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\portcls.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\km\x64\ks.lib;C:\Program Files (x86)\Windows Kits\10\Lib\wdf\kmdf\x64\1.35\WdfLdr.lib;C:\Program Files (x86)\Windows Kits\10\Lib\wdf\kmdf\x64\1.35\WdfDriverEntry.lib;$(OutDir)sof_core.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="src\driver\Driver.h" />
+    <ClInclude Include="src\driver\Device.h" />
+    <ClInclude Include="src\driver\PciIds.h" />
+    <ClInclude Include="src\driver\Hw.h" />
+    <ClInclude Include="src\driver\Ipc.h" />
+    <ClInclude Include="src\driver\Loader.h" />
+    <ClInclude Include="src\driver\Topo.h" />
+    <ClInclude Include="src\driver\WaveRt.h" />
+    <ClInclude Include="src\driver\Nhlt.h" />
+    <ClInclude Include="src\driver\PortClsAdapter.h" />
+    <ClInclude Include="src\driver\HdaVerb.h" />
+    <ClInclude Include="src\driver\HdaBusInterface.h" />
+    <ClInclude Include="src\driver\SdwController.h" />
+    <ClInclude Include="src\driver\UsbOffload.h" />
+    <ClInclude Include="src\driver\UaolGateway.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\driver\Driver.c" />
+    <ClCompile Include="src\driver\Device.c" />
+    <ClCompile Include="src\driver\Hw.c" />
+    <ClCompile Include="src\driver\Ipc.c" />
+    <ClCompile Include="src\driver\Loader.c" />
+    <ClCompile Include="src\driver\Topo.c" />
+    <ClCompile Include="src\driver\WaveRt.c" />
+    <ClCompile Include="src\driver\Nhlt.c" />
+    <ClCompile Include="src\driver\PortClsAdapter.cpp" />
+    <ClCompile Include="src\driver\HdaVerb.c" />
+    <ClCompile Include="src\driver\HdaBusInterface.c" />
+    <ClCompile Include="src\driver\SdwController.c" />
+    <ClCompile Include="src\driver\UsbOffload.c" />
+    <ClCompile Include="src\driver\UaolGateway.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\driver\sof_dsp.inx" />
+    <None Include="src\driver\sof_usb_ext.inx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="sof_core.vcxproj">
+      <Project>{B869DD57-F1CB-4C88-B495-B4317F45E6F5}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+</Project>
